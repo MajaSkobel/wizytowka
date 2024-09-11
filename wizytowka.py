@@ -44,6 +44,3 @@ def create_contacts(card_type,quantity):
     elif card_type == "Business":
         for i in range(quantity):
             contacts.append(BusinessContact(first_name=fake.first_name(),last_name=fake.last_name(),phone_number=fake.phone_number(),email=fake.email(),job=fake.job(),company=fake.company(),work_phone_number=fake.phone_number())) 
-
-create_contacts("Business",5)
-print(contacts)
