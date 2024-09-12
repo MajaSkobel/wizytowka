@@ -38,9 +38,11 @@ class BusinessContact(BaseContact):
         print(f"Wybieram numer {self.work_phone_number} i dzwonię do {self.first_name} {self.first_name}.")
 
 def create_contacts(card_type,quantity):
-    if card_type == "Base":
-        for i in range(quantity):
+    for i in range(quantity):
+        if card_type == "Base":
             contacts.append(BaseContact(fake.first_name(),fake.last_name(),fake.phone_number(),fake.email()))
-    elif card_type == "Business":
-        for i in range(quantity):
+        elif card_type == "Business":
             contacts.append(BusinessContact(first_name=fake.first_name(),last_name=fake.last_name(),phone_number=fake.phone_number(),email=fake.email(),job=fake.job(),company=fake.company(),work_phone_number=fake.phone_number())) 
+
+create_contacts("Base",10)
+print(contacts)
